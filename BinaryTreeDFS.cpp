@@ -112,6 +112,5 @@ int main()
 	//makeLine(node,30,1350);
 	closegraph();
 	getch();
-	
 	return 0;
 }
