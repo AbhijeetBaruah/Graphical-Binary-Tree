@@ -2,6 +2,9 @@
 #include <graphics.h>
 #include <stdio.h>
 #include <time.h>
+#include <iostream>
+#include <math.h>
+using namespace std;
 
 int width = 1350;
 int height = 900;
@@ -122,14 +125,14 @@ int main()
 		node[i]->right = node[2*i+2];
 	}
 	system("cls");
-
     Delay(10);
-    Inorder2(node,30,1350);
+    Inorder2(node[0],30,1350);
     outtextxy(280,300,"Traversing Binary tree using DFS inorder traversal method");
     Delay(3);
-    Inorder(node,350,1350);
+    Inorder(node[0],350,1350);
 	//makeLine(node,30,1350);
 	closegraph();
 	getch();
+	
 	return 0;
 }
