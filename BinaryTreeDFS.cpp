@@ -2,6 +2,9 @@
 #include <graphics.h>
 #include <stdio.h>
 #include <time.h>
+#include <iostream>
+#include <math.h>
+using namespace std;
 
 int width = 1350;
 int height = 900;
@@ -94,7 +97,7 @@ int main()
 	int gd=0,gm;
 	initwindow(width,height);
 	initgraph(&gd,&gm,NULL);
-	Node *node = new Node(4);///we create a root node for the binary tree and initialise it, 'new' is used to allocate memory
+	/*Node *node = new Node(4);///we create a root node for the binary tree and initialise it, 'new' is used to allocate memory
     node->left = new Node(5); ///we then create a left node for the root node and initialise it
     node->right = new Node(6);///similarly we create right node for the root node and initialise it
     node->left->left = new Node(7);
@@ -104,11 +107,40 @@ int main()
    // node->right->left->left = new Node(12);
     node->right->right = new Node(10);
     node->right->right->right = new Node(11);
+    */
+    cout<<"enter the height of binary tree starting from 0 as root\n";
+    int n;
+    cin>>n;
+    int height = n;
+    n = pow(2,n+1)-1; //number of nodes
+    cout<<n<<endl;
+    int arry[n];
+    system("cls");
+    cout<<endl<<"enter the node value using 2n+1 and 2n+2 rule...enter 0 if there is no child node of a node\n";
+    for(int i = 0;i<n;i++)
+    {
+        cin>>arry[i];
+        cout<<endl;
+    }
+    system("cls");
+	Node *node[n];
+	
+	for(int i = 0;i<n;i++)
+	{
+		node[i] = new Node(arry[i]);
+	}
+	
+	for(int i=0;i<(pow(2,height)-1);i++)
+	{
+		node[i]->left = node[2*i+1];
+		node[i]->right = node[2*i+2];
+	}
+	system("cls");
     Delay(10);
-    Inorder2(node,30,1350);
+    Inorder2(node[0],30,1350);
     outtextxy(280,300,"Traversing Binary tree using DFS inorder traversal method");
     Delay(3);
-    Inorder(node,350,1350);
+    Inorder(node[0],350,1350);
 	//makeLine(node,30,1350);
 	closegraph();
 	getch();
