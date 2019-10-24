@@ -97,17 +97,6 @@ int main()
 	int gd=0,gm;
 	initwindow(width,height);
 	initgraph(&gd,&gm,NULL);
-	/*Node *node = new Node(4);///we create a root node for the binary tree and initialise it, 'new' is used to allocate memory
-    node->left = new Node(5); ///we then create a left node for the root node and initialise it
-    node->right = new Node(6);///similarly we create right node for the root node and initialise it
-    node->left->left = new Node(7);
-    node->left->right = new Node(8);
-    //node->left->right->right = new Node(13);
-    node->right->left = new Node(9);
-   // node->right->left->left = new Node(12);
-    node->right->right = new Node(10);
-    node->right->right->right = new Node(11);
-    */
     cout<<"enter the height of binary tree starting from 0 as root\n";
     int n;
     cin>>n;
