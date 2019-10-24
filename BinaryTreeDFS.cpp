@@ -2,6 +2,9 @@
 #include <graphics.h>
 #include <stdio.h>
 #include <time.h>
+#include <iostream>
+#include <math.h>
+using namespace std;
 
 int width = 1350;
 int height = 900;
@@ -94,6 +97,17 @@ int main()
 	int gd=0,gm;
 	initwindow(width,height);
 	initgraph(&gd,&gm,NULL);
+	/*Node *node = new Node(4);///we create a root node for the binary tree and initialise it, 'new' is used to allocate memory
+    node->left = new Node(5); ///we then create a left node for the root node and initialise it
+    node->right = new Node(6);///similarly we create right node for the root node and initialise it
+    node->left->left = new Node(7);
+    node->left->right = new Node(8);
+    //node->left->right->right = new Node(13);
+    node->right->left = new Node(9);
+   // node->right->left->left = new Node(12);
+    node->right->right = new Node(10);
+    node->right->right->right = new Node(11);
+    */
     cout<<"enter the height of binary tree starting from 0 as root\n";
     int n;
     cin>>n;
@@ -122,14 +136,14 @@ int main()
 		node[i]->right = node[2*i+2];
 	}
 	system("cls");
-
     Delay(10);
-    Inorder2(node,30,1350);
+    Inorder2(node[0],30,1350);
     outtextxy(280,300,"Traversing Binary tree using DFS inorder traversal method");
     Delay(3);
-    Inorder(node,350,1350);
+    Inorder(node[0],350,1350);
 	//makeLine(node,30,1350);
 	closegraph();
 	getch();
+	
 	return 0;
 }
